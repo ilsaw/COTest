@@ -4,7 +4,8 @@
   "description": "ComparaOnline Software Engineer Test",
   "main": "index.js",
   "scripts": {
-    "test": "mocha spec/*.js"
+    "test": "mocha spec/*.js; ./node_modules/istanbul/lib/cli.js cover node_modules/mocha/bin/_mocha --  --recursive --exit --check-leaks -R spec spec"
+  , "after-30-days":"node ./spec/coTest-30.js"
   },
   "repository": {
     "type": "git",
@@ -24,6 +25,10 @@
   "homepage": "https://github.com/comparaonline/test-software-engineer#readme",
   "devDependencies": {
     "chai": "^4.1.2",
+    "codecov": "^3.1.0",
     "mocha": "^4.0.1"
+  },
+  "dependencies": {
+    "istanbul": "^0.4.5"
   }
 }
